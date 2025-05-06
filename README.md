@@ -1,122 +1,83 @@
 # eCLUB
 
-Aplicación Flutter para eCLUB Paraguay 2025.  
-Este proyecto implementa el look & feel definido en Figma, utilizando componentes visuales personalizados, navegación estructurada y soporte para SVG.
+Aplicación Flutter desarrollada para representar el look & feel de la app eCLUB Paraguay 2025.  
+La interfaz se basa en diseños realizados en Figma, e implementa navegación estructurada y componentes visuales personalizados.
 
----
+## Tecnologías utilizadas
 
-## Clonar el repositorio
+- Flutter 3.x
+- Dart
 
-Desde la terminal:
+## Principales dependencias
 
-```bash
-git clone https://github.com/enriquepitta/eCLUB.git
-cd eCLUB
-```
+Este proyecto utiliza las siguientes librerías para mejorar la experiencia visual y funcional:
 
----
+- **flutter_svg**: Renderizado de íconos SVG escalables.
+- **google_fonts**: Tipografías personalizadas desde Google Fonts.
+- **fl_chart**: Gráficos animados y responsivos para visualización de datos.
+- **intl**: Formateo de fechas, números y monedas según la localización.
 
-## Instalación de dependencias
+Para ver todas las dependencias, consultar el archivo [`pubspec.yaml`](pubspec.yaml).
 
-```bash
-flutter pub get
-```
+## Estructura general
 
----
+- Pantallas estructuradas según navegación definida en Figma
+- Componentes reutilizables con estilos personalizados
+- Sistema de navegación tipo BottomNavigationBar
+- Compatible con emuladores y dispositivos físicos Android y iOS
 
-## Verificación del entorno
+## Estructura de archivos
 
-Antes de continuar, asegurarse de que todo esté correctamente configurado ejecutando:
-
-```bash
-flutter doctor
-```
-
-El comando mostrará el estado del entorno. Verificar que no haya errores en los siguientes apartados:
-
-- Flutter
-- Android toolchain
-- Android Studio
-- Connected device (opcional si solo vas a generar APK)
-
----
-
-## Requisitos
-
-- Flutter SDK (versión 3.x recomendada)
-- Android Studio con:
-    - Android SDK
-    - NDK versión 27.0.12077973
-    - Emulador o dispositivo físico conectado
-- Git instalado
-
----
-
-## Generar APK
-
-### Desde la terminal
-
-```bash
-flutter build apk --release
-```
-
-El archivo generado estará en:
+La estructura del proyecto sigue una organización modular por función:
 
 ```
-build/app/outputs/flutter-apk/app-release.apk
+lib/
+├── models/
+│   ├── movement_model.dart
+│   └── notification_model.dart
+│
+├── screens/
+│   ├── analysis/
+│   │   └── analysis_screen.dart
+│   ├── expenses/
+│   │   ├── expenses_analysis_screen.dart
+│   │   └── widgets/
+│   │       ├── expense_category_list.dart
+│   │       ├── expense_pie_chart.dart
+│   │       └── month_calendar.dart
+│   └── home/
+│       ├── home_screen.dart
+│       └── widgets/
+│           └── home_screen.dart
+│
+├── themes/
+│   ├── app_colors.dart
+│   └── app_icons.dart
+│
+├── widgets/
+│   ├── dashboard_sections/
+│   │   ├── movements_section.dart
+│   │   ├── notifications_section.dart
+│   │   └── reais_section.dart
+│   ├── custom_bottom_navigation_bar.dart
+│   └── dashboard_header.dart
+│
+└── main.dart
 ```
 
----
+## Capturas de pantalla
 
-### Desde Android Studio
+Vista previa de algunas pantallas de la aplicación:
 
-1. Abrir el proyecto (carpeta eCLUB) en Android Studio.
-2. Esperar a que se sincronicen las dependencias (pub get).
-3. En el menú superior, seleccionar:  
-   Build > Flutter > Build APK  
-   o  
-   Build > Build Bundle(s) / APK(s) > Build APK(s)
-4. Una vez generado, hacer clic en "locate" para abrir la carpeta del APK.
+<p align="center">
+  <img src="https://i.postimg.cc/Nj5Y38LF/Simulator-Screenshot-i-Phone-16-Pro-Max-2025-05-04-at-23-29-15.png" alt="Pantalla de inicio" width="180"/>
+  <img src="https://i.postimg.cc/DwJkj2Yb/Simulator-Screenshot-i-Phone-16-Pro-Max-2025-05-04-at-23-29-21.png" alt="Lista de movimientos" width="180"/>
+  <img src="https://i.postimg.cc/3RZP4WWz/Simulator-Screenshot-i-Phone-16-Pro-Max-2025-05-04-at-23-29-24.png" alt="Pantalla de análisis" width="180"/>
+  <img src="https://i.postimg.cc/2y8g4mZy/Simulator-Screenshot-i-Phone-16-Pro-Max-2025-05-04-at-23-29-29.png" alt="Gastos por categoría" width="180"/>
+</p>
 
-También se puede acceder manualmente haciendo clic derecho sobre la carpeta del proyecto `eCLUB` en Android Studio y seleccionando **"Reveal in Finder"** o **"Open in Finder"**, luego navegar hasta `build/app/outputs/flutter-apk/`.
+## Créditos
 
----
+Desarrollado por [@enriquepitta](https://github.com/enriquepitta)
 
-## Ejecutar la aplicación en modo desarrollo
-
-### Desde la terminal
-
-```bash
-flutter run
-```
-
-Asegurarse de tener un emulador abierto o un dispositivo conectado.
-
-### Desde Android Studio
-
-1. Seleccionar un emulador o dispositivo real.
-2. Presionar el botón "Run" en la barra superior.
-
----
-
-## Instalar APK en un emulador
-
-Una vez generado el `.apk`, se puede instalar fácilmente en un emulador de Android arrastrando el archivo `app-release.apk` directamente dentro de la ventana del emulador. La instalación se hará automáticamente.
-
----
-
-## Notas
-
-- Verificar que la versión correcta del NDK esté instalada:  
-  Android Studio > Preferences > SDK Tools > NDK (Side by side)
-
-- En caso de errores, ejecutar:
-
-```bash
-flutter clean
-flutter pub get
-```
-
----
-
-Última actualización: Mayo 2025 – por [@enriquepitta](https://github.com/enriquepitta)
+Para más detalles técnicos sobre instalación y ejecución, ver [INSTALL_GUIDE.md](INSTALL_GUIDE.md)
