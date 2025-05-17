@@ -6,7 +6,6 @@ import 'package:eclub/screens/home/widgets/home_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:eclub/screens/analysis/analysis_screen.dart';
-// Importa los demás screens que usarás en tu navegación
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
